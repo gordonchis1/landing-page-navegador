@@ -1,4 +1,5 @@
 /backend_browser/node_modules
 /backend_browser/.env
+
+
 /browser_frontend/node_modules
-/browser_frontend/.hintrc
