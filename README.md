@@ -5,3 +5,4 @@ Esto es una landing page de un navegador pero con funcionalidades anadidas por m
 **Esto es solo un preview falta mucho por hacer**
 **El codigo no es el mejor del mundo ya que es una de mis primeras apliaciones**
 
+![](./img-gitHub/Group%201.png)
