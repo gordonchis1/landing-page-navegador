@@ -1,0 +1,12 @@
+.nav__btn-scheme {
+    border: none;
+    background: none;
+}
+
+.nav__btn-scheme::after {
+    content: "🌑" !important;
+}
+
+html[scheme='dark-mode'] .nav__btn-scheme::after {
+    content: "🌞" !important
+}

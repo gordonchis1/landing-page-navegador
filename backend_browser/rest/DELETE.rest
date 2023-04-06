@@ -1,0 +1,2 @@
+//http://localhost:3001/api/notes/id
+DELETE  http://localhost:3001/api/notes/640fd1bf29a6a40d6e7b19be HTTP/1.1

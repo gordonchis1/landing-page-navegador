@@ -1,0 +1,72 @@
+:root {
+    --dark-background: #000;
+    --dark-font-color: #fff;
+
+
+    --light-font-color: #000;
+
+    --default-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1,
+a,
+p,
+h2,
+h3,
+span,
+small {
+    color: var(--light-font-color);
+}
+
+html[scheme='dark-mode'] span,
+html[scheme='dark-mode'] h1,
+html[scheme='dark-mode'] a,
+html[scheme='dark-mode'] .icon,
+html[scheme='dark-mode'] small,
+html[scheme='dark-mode'] p {
+    color: #fff;
+
+}
+
+h1,
+a,
+p,
+h2,
+h3,
+span,
+small {
+    font-family: var(--default-font-family);
+}
+
+body {
+    background-image: url(../img/background/mobil/2.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+html[scheme='light-mode'] body {
+    background-image: url(../img/background/mobil/1.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (min-width: 600px) {
+    html[scheme='light-mode'] body {
+        background-image: url(../img/background/desktop/1.jpg);
+        background-size: cover;
+    }
+
+    body {
+        background-image: url(../img/background/desktop/2.jpg);
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+}

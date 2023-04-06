@@ -1,0 +1,9 @@
+
+//getAll
+GET http://localhost:3001/api/notes/
+
+
+###
+//getByID
+
+GET http://localhost:3001/api/notes/640ce2827436b13f538bb92f HTTP/1.1

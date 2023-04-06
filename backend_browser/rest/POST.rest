@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/notes/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "a nada de las metas",
+	"limitTime": "2022-03-25",
+	"tags": ["escuela", "pro" ]
+}
