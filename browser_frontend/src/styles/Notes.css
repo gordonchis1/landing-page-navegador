@@ -1,7 +1,7 @@
 .section-notes {
     width: 100vw;
 
-    margin-top: 20px;
+    margin-top: 50px;
 
     display: flex;
     justify-content: center;
@@ -103,7 +103,7 @@ html[scheme='light-mode'] .section__notes-wrapper {
     background: transparent;
     border: none;
     outline: none;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .add__close-btn {
@@ -353,4 +353,118 @@ html[scheme='light-mode'] .each-note__addtime {
     left: 0;
     position: absolute;
     z-index: 1000;
+}
+
+/* ^ remove */
+.note__remove-confirmation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.634);
+    z-index: 3000;
+}
+
+.remove__close-btn button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+
+}
+
+.remove__close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.remove__confirmation-wrapper {
+    width: 90%;
+    height: 34%;
+    background: #252525;
+    border-radius: 4px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+html[scheme='light-mode'] .remove__confirmation-wrapper {
+    width: 90%;
+    height: 35%;
+    background: #ffffff;
+    border-radius: 4px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.remove__text-advertencia {
+    margin: 14px;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.remove__text-advertencia span {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    color: rgb(255, 102, 0) !important;
+}
+
+.remove__text-mensaje {
+    margin: 20px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.icon-close {
+    color: rgb(255, 255, 255);
+
+}
+
+.remove__cotainer-bts {
+    margin: 20px;
+    align-self: flex-end;
+}
+
+.remove__btn {
+    background: transparent;
+    padding: 0;
+
+    margin: 4px;
+    padding: 7px;
+    border-radius: 4px;
+}
+
+.cancelar {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.confirmar {
+    background: rgb(255, 0, 0) !important;
+    border: 2px solid rgb(255, 0, 0);
+}
+
+.remove-btn {
+    padding: 4px 30% 4px 30%;
+    border: 2px solid #ff0000;
+    background: none;
+    color: #ff0000 !important;
+    background: #ff000031;
+    border-radius: 4px;
 }

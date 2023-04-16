@@ -17,7 +17,6 @@ const Note = ({ data, remove, all }) => {
   }
 
   const handleRemove = () => {
-    remove.setListRemove(prev => [...prev, data.id])
     all.notes.map(element => {
       if (element.id === data.id) {
         const newProp = { ...element, select: !element.select }
@@ -27,7 +26,6 @@ const Note = ({ data, remove, all }) => {
       return '.'
     })
   }
-  console.log(all.notes)
 
   return (
     <div className='note__container-each-note each-note'>

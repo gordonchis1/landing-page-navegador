@@ -21,6 +21,7 @@ const App = () => {
       <section className='section-notes'>
         <Notes />
       </section>
+      <section className='chatgpt-utils' />
     </div>
   )
 }

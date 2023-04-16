@@ -23,7 +23,7 @@ const NotesConatiner = () => {
   })
 
   const [remove, setRemove] = useState(false)
-  const [listRemove, setListRemove] = useState([])
+  const [confirmRemove, setConfirmRemove] = useState(false)
 
   const handleAddNote = () => {
     setActiveAdd({ status: true, mode: 'add' })
@@ -125,27 +125,65 @@ const NotesConatiner = () => {
 
   const handleRemove = () => {
     setRemove(!remove)
-    setListRemove([])
   }
   const handleNoteRemove = () => {
-    const arr = [...new Set(listRemove)]
-    arr.forEach(element => {
+    notes.map(element => {
+      if (element.select === true) {
+        deleteNote(element.id)
+        setAllNotes(prev => prev.filter(note => element.id !== note.id))
+      }
+      return ''
+    })
+
+    /*     arr.forEach(element => {
       deleteNote(element)
       setAllNotes(prev => prev.filter(note => element !== note.id))
-    })
-    setListRemove([])
-    setRemove(false)
+    }) */
+    setConfirmRemove(false)
   }
+
+  const handleCloseRemove = () => {
+    setConfirmRemove(false)
+  }
+
+  const handleConfirmRemove = () => {
+    let counter = 0
+    notes.map(element => {
+      if (element.select) { counter += 1 } return counter
+    })
+    if (counter !== 0) { setConfirmRemove(true) }
+  }
+
   return (
     <>
       {/* // & ==================ADD AND PUT FORM =========== */}
+      {confirmRemove && (
+        <div className='note__remove-confirmation'>
+          <div className='remove__close-btn'>
+            <button onClick={handleCloseRemove}>
+              <FontAwesomeIcon icon={faClose} className='icon-close' />
+            </button>
+          </div>
+          <div className='remove__confirmation-wrapper'>
+            <div className='remove__text-advertencia'>
+              <span>Advertencia</span>
+            </div>
+            <div className='remove__text-mensaje'>
+              <span>Estas seguro que quieres eliminar las notas no habra forma de recuperarlas en el futuro</span>
+            </div>
+            <div className='remove__cotainer-bts'>
+              <button className='remove__btn cancelar' onClick={handleCloseRemove}>Cancelar</button>
+              <button className='remove__btn confirmar' onClick={handleNoteRemove}>Confirmar</button>
+            </div>
+          </div>
+        </div>)}
       {activeAdd.status && (
         <div className='note__add-wrapper add'>
           <div>
 
             <div className='add__close-btn'>
               <button onClick={handleClose}>
-                <FontAwesomeIcon icon={faClose} className='icon' />
+                <FontAwesomeIcon icon={faClose} className='icon-close' />
               </button>
             </div>
 
@@ -213,7 +251,7 @@ const NotesConatiner = () => {
                     title, description, tags, limitTime, addTime, id, setActiveAdd, activeAdd, setValuesForm, valuesForm, setTags, select, element, setAllNotes, notes
                   }}
                   all={{ setAllNotes, notes }}
-                  remove={{ setRemove, remove, listRemove, setListRemove }}
+                  remove={{ setRemove, remove }}
                   key={element.id || Math.random()}
                 />
               )
@@ -221,7 +259,7 @@ const NotesConatiner = () => {
             : <Loader />}
         </div>
         {/* // & ======================================= */}
-        {remove ? <button onClick={handleNoteRemove}>remove</button> : ''}
+        {remove ? <button onClick={handleConfirmRemove} className='remove-btn'>remove</button> : ''}
       </div>
     </>
   )

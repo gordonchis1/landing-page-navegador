@@ -23,6 +23,7 @@ html[scheme='dark-mode'] h1,
 html[scheme='dark-mode'] a,
 html[scheme='dark-mode'] .icon,
 html[scheme='dark-mode'] small,
+html[scheme='dark-mode'] button,
 html[scheme='dark-mode'] p {
     color: #fff;
 
